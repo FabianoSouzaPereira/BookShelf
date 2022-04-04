@@ -64,6 +64,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="yMw-m0-8lk"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jCK-hW-UXz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1M4-A6-GNN"/>
@@ -110,7 +111,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="h2F-ji-uMy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-9M-QMR">
                                 <rect key="frame" x="20" y="229" width="48" height="20.333333333333343"/>
@@ -125,7 +126,7 @@
                                     <constraint firstAttribute="height" constant="50" id="tYJ-zj-gDR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ4-tt-SHY">
                                 <rect key="frame" x="127" y="357.33333333333331" width="160" height="60"/>
@@ -193,7 +194,7 @@
                                     <constraint firstAttribute="height" constant="40" id="3jb-zW-Uuk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCX-wJ-7EU">
                                 <rect key="frame" x="20" y="219" width="374" height="21"/>
@@ -207,7 +208,7 @@
                                     <constraint firstAttribute="height" constant="40" id="IDs-bu-21I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="confere senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVV-3L-2pr">
                                 <rect key="frame" x="20" y="304" width="108" height="21"/>
@@ -221,7 +222,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Qof-cc-eO0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7z-61-l7K">
                                 <rect key="frame" x="127" y="403" width="160" height="60"/>
@@ -270,7 +271,7 @@
                         <outlet property="btnCreateAccount" destination="C7z-61-l7K" id="bui-Jc-WzY"/>
                         <outlet property="checkPassword" destination="fFS-Mm-peh" id="Mhy-4h-eJj"/>
                         <outlet property="emailAccount" destination="3m2-xp-rLX" id="xbx-E6-qau"/>
-                        <outlet property="passwordAccount" destination="mCX-wJ-7EU" id="odB-XW-I7O"/>
+                        <outlet property="passwordAccount" destination="nGD-cZ-Q4D" id="xt0-Ux-zdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhT-f7-jij" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

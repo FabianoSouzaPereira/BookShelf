@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var emailAccount: UITextField!
-    @IBOutlet weak var passwordAccount: UILabel!
+    @IBOutlet weak var passwordAccount: UITextField!
     @IBOutlet weak var checkPassword: UITextField!
     @IBOutlet weak var btnCreateAccount: UIButton!
     
@@ -29,6 +30,44 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction func createAccount(_ sender: Any) {
+        
+        if let email = self.emailAccount.text {
+            if let password = self.passwordAccount.text {
+                if let passwordConfirmation = self.checkPassword.text {
+                    
+                    if password == passwordConfirmation {
+                       
+                        let autenticacao = Auth.auth()
+                        autenticacao.createUser(withEmail: email, password: password, completion: {(usuario, erro) in
+                            
+                            if erro == nil {
+                                print("Sucesso ao cadastrar usuáio.")
+                            }else{
+                                print("Erro ao cadastrar o usuário.")
+                            }
+                        })
+                        
+                    }else{
+                        
+                        self.showMensage(titulo: "Dados incorretos!", mensagem: "As senhas não são iguais.")
+                        
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    
+    func showMensage(titulo: String, mensagem: String){
+        let alerta = UIAlertController.init(title: titulo, message: mensagem, preferredStyle: .alert)
+        
+        let actionCancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        alerta.addAction(actionCancel)
+        present(alerta, animated: true, completion: nil)
+        
+        
     }
     
 
