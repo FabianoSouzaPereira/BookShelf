@@ -1,0 +1,6 @@
+framework module Pods_BookShelfTests {
+  umbrella header "Pods-BookShelfTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
