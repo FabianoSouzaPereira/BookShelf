@@ -15,7 +15,6 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var checkPassword: UITextField!
     @IBOutlet weak var btnCreateAccount: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,16 +41,43 @@ class CreateAccountViewController: UIViewController {
                             
                             if erro == nil {
                                 print("Sucesso ao cadastrar usuáio.")
-                            }else{
-                                print("Erro ao cadastrar o usuário.")
-                            }
+                            }else {
+                             
+                                /* ERROR_INVALID_EMAIL  ERROR_WEAK_PASSWORD  ERROR_EMAIL_ALREADY_IN_USE */
+                                let erroR = erro! as NSError
+                                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
+                                    
+                                    let erroTexto = codigoErro as! String
+                                    var mensagemErro = ""
+                                    
+                                    switch erroTexto {
+                                        
+                                        case "ERROR_INVALID_EMAIL" :
+                                            mensagemErro = "E-amil invalido, digite um e-mail válido!"
+                                            break
+                                        case "ERROR_WEAK_PASSWORD":
+                                            mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números."
+                                            break
+                                        case "ERROR_EMAIL_ALREADY_IN_USE" :
+                                            mensagemErro = "Esse e-mail já está sendo utilizado, crie sua conta com outro e-mail."
+                                            break
+                                        default:
+                                            mensagemErro = "Dados digitados estão incorretos."
+                                
+                                    }
+                                    
+                                    self.showMensage(titulo: "Dados inválidos", mensagem: mensagemErro)
+        
+                                }
+                               
+                            } /* End validation error Firebase */
                         })
                         
                     }else{
                         
-                        self.showMensage(titulo: "Dados incorretos!", mensagem: "As senhas não são iguais.")
+                        self.showMensage(titulo: "Dados incorretos!", mensagem: "As senhas não são iguais, digite novamente.")
                         
-                    }
+                    }/* Fim password validadtion */
                     
                 }
             }
